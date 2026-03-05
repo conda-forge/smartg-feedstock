@@ -1,5 +1,5 @@
 {% set name = "smartg" %}
-{% set version = "1.1.4" %}
+{% set version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smartg-{{ version }}.tar.gz
-  sha256: 2411519cc431c1a53cd4f2387e44624f72e19f6a4a5e5db5ce992d3e341bc3f2
+  sha256: 72bcf2fa32d4a5d97b98e082ecc7c562e0baf8d4f01329fae2fcd38c179ca27d
 
 build:
   noarch: python
