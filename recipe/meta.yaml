@@ -1,5 +1,6 @@
 {% set name = "smartg" %}
-{% set version = "1.1.5" %}
+{% set version = "1.2.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smartg-{{ version }}.tar.gz
-  sha256: 72bcf2fa32d4a5d97b98e082ecc7c562e0baf8d4f01329fae2fcd38c179ca27d
+  sha256: 540f1d5aec4d11c3922072618ad286412f0e628202b918d823ef1ee709ce4500
 
 build:
   noarch: python
@@ -37,6 +38,7 @@ requirements:
     - pycuda
     - geoclide >=3
     - luts
+    - pytrunc
 
 test:
   imports:
