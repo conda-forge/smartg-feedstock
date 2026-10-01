@@ -1,14 +1,13 @@
 {% set name = "smartg" %}
-{% set version = "1.2.0" %}
-{% set python_min = "3.11" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smartg-{{ version }}.tar.gz
-  sha256: 540f1d5aec4d11c3922072618ad286412f0e628202b918d823ef1ee709ce4500
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/smartg-{{ version }}.tar.gz
+  sha256: 1a7570818528b1d2b5fd9830107a35050dfcdf77203aa8692ee16ff16881f1d4
 
 build:
   noarch: python
@@ -18,27 +17,29 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=42
+    - setuptools >=61
     - pip
   run:
-    - python >={{ python_min }}
-    - numpy
+    - python >={{ python_min }},<3.15
+    - numpy >=2,<3
+    - xarray
     - pandas
     - scipy
     - h5py
-    - pyarrow
     - openpyxl
     - progressbar2
-    - matplotlib
+    - tqdm
+    - matplotlib-base
     - python-dotenv
     - notebook
+    - jupytext >=1.16,<2
     - ipywidgets
     - ipympl
-    - pyhdf
     - pycuda
-    - geoclide >=3
+    - geoclide >=4.0.0,<5
     - luts
-    - pytrunc
+    - pytrunc >=2.1.0,<3
+    - gatiab >=1.1.2,<2
 
 test:
   imports:
