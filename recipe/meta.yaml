@@ -1,6 +1,5 @@
 {% set name = "smartg" %}
 {% set version = "2.0.0" %}
-{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -18,27 +17,29 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=42
+    - setuptools >=61
     - pip
   run:
-    - python >={{ python_min }}
-    - numpy
+    - python >={{ python_min }},<3.15
+    - numpy >=2,<3
+    - xarray
     - pandas
     - scipy
     - h5py
-    - pyarrow
     - openpyxl
     - progressbar2
-    - matplotlib
+    - tqdm
+    - matplotlib-base
     - python-dotenv
     - notebook
+    - jupytext >=1.16,<2
     - ipywidgets
     - ipympl
-    - pyhdf
     - pycuda
-    - geoclide >=3
+    - geoclide >=4.0.0,<5
     - luts
-    - pytrunc
+    - pytrunc >=2.1.0,<3
+    - gatiab >=1.1.2,<2
 
 test:
   imports:
