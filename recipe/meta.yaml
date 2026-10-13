@@ -1,5 +1,5 @@
 {% set name = "smartg" %}
-{% set version = "2.0.3" %}
+{% set version = "2.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/smartg-{{ version }}.tar.gz
-  sha256: b0a4f3ef10bfab34c72704110e11a53a2a8d351d3acbc1d33d994711eb9caf73
+  sha256: 92fd898176a0a8e26de5e71b51ada67ca05152b0a924484c4a11f43f473f8cc8
 
 build:
   noarch: python
